@@ -16,7 +16,11 @@ const GRAPH_FOLDER_URLS = ["https://graph.microsoft.com/v1.0/sites/12edde5d-f77e
 
 
 // 1️⃣ Get Zoho Access Token
-console.log(ZOHORORKDRIVE_PARENT_ID);
+console.log("===== ENV DEBUG =====");
+console.log("TENANT_ID:", process.env.TENANT_ID);
+console.log("MS_CLIENT_ID:", process.env.MS_CLIENT_ID);
+console.log("ZOHO_PARENT_ID:", process.env.ZOHO_PARENT_ID);
+console.log("=====================");
 async function ZohoGetAccessToken() {
 //   const tokenUrl = "https://accounts.zoho.in/oauth/v2/token";
 
