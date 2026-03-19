@@ -9,6 +9,9 @@ jobs:
   run-script:
     runs-on: ubuntu-latest
 
+    # 👇 IMPORTANT: this must match your environment name
+    environment: ZOHO_REFRESH_TOKEN
+
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -20,6 +23,11 @@ jobs:
 
       - name: Install dependencies
         run: npm install
+
+      - name: Debug ENV (remove later)
+        run: |
+          echo "TENANT_ID=$TENANT_ID"
+          echo "MS_CLIENT_ID=$MS_CLIENT_ID"
 
       - name: Run script
         env:
