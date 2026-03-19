@@ -34,10 +34,11 @@ jobs:
           ZOHO_REFRESH_TOKEN: ${{ secrets.ZOHO_REFRESH_TOKEN }}
           ZOHO_CLIENT_ID: ${{ secrets.ZOHO_CLIENT_ID }}
           ZOHO_CLIENT_SECRET: ${{ secrets.ZOHO_CLIENT_SECRET }}
-          ZOHO_PARENT_ID: ${{ secrets.ZOHO_PARENT_ID }}
+          ZOHO_PARENT_ID: ${{ secrets.SALES_ZOHO_PARENT_ID }}
 
           TENANT_ID: ${{ secrets.TENANT_ID }}
           MS_CLIENT_ID: ${{ secrets.MS_CLIENT_ID }}
           MS_CLIENT_SECRET: ${{ secrets.MS_CLIENT_SECRET }}
+          Recoding_URL : ${{ secrets.SALES_SHARE_POINT_URL }}
 
         run: node index.js
