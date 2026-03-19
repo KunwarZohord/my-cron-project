@@ -8,11 +8,11 @@ require("dotenv").config();
 const ZOHORefresh_token = process.env.ZOHO_REFRESH_TOKEN;
 const ZOHORlient_id = process.env.ZOHO_CLIENT_ID;
 const ZOHORlinet_secret = process.env.ZOHO_CLIENT_SECRET;
-const ZOHORORKDRIVE_PARENT_ID = process.env.ZOHO_PARENT_ID;
+const ZOHORORKDRIVE_PARENT_ID = process.env.Sales_ZOHO_PARENT_ID;
 const TENANT_ID = process.env.TENANT_ID;
 const CLIENT_ID = process.env.MS_CLIENT_ID;
 const CLIENT_SECRET = process.env.MS_CLIENT_SECRET;
-const GRAPH_FOLDER_URLS = ["https://graph.microsoft.com/v1.0/sites/12edde5d-f77e-4066-bc51-1cc8bf1790e8/drives/b!Xd7tEn73ZkC8URzIvxeQ6DuvO8TQ8vdNq_pUZWugNwPjqtGXpq8-RJF9vGCY5jrp/items/01GP5U4HEVXV4OCSEOOJD23JFF6BHCVY6X/children","https://graph.microsoft.com/v1.0/drives/b!Xd7tEn73ZkC8URzIvxeQ6DuvO8TQ8vdNq_pUZWugNwPjqtGXpq8-RJF9vGCY5jrp/items/01GP5U4HA5ZULMT2OEPFEYOPU4P5MVF67X/children"];
+const GRAPH_FOLDER_URLS = process.env.Sales_Share_POINT_URL;
 
 
 // 1️⃣ Get Zoho Access Token
@@ -60,8 +60,8 @@ async function fetchLast24HourFiles() {
   try {
     const accessToken = await getAccessToken();
     i=0;
- for (const GRAPH_FOLDER_URL of GRAPH_FOLDER_URLS) {
-    const response = await axios.get(GRAPH_FOLDER_URL, {
+//  for (const GRAPH_FOLDER_URL of GRAPH_FOLDER_URLS) {
+    const response = await axios.get(GRAPH_FOLDER_URLS, {
       headers: {
         Authorization: `Bearer ${accessToken}`,
       },
@@ -92,7 +92,7 @@ async function fetchLast24HourFiles() {
       }
       // console.log("Upload Result:", result);
     }
-  }
+//   }
   } catch (error) {
     console.error("Error:", error.response?.data || error.message);
   }
