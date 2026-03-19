@@ -158,7 +158,7 @@ async function uploadLargeFileFromStream(downloadUrl,accessToken, fileName) {
         headers: {
           "Authorization": `Zoho-oauthtoken ${accessToken}`,
           "x-filename": fileName,
-          "x-parent_id": parentId,
+          "x-parent_id": ZOHORORKDRIVE_PARENT_ID,
           "upload-id": uploadId,
           "x-streammode": "1",
           "Content-Type": "application/octet-stream",
