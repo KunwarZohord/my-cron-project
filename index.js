@@ -8,18 +8,18 @@ require("dotenv").config();
 const ZOHORefresh_token = process.env.ZOHO_REFRESH_TOKEN;
 const ZOHORlient_id = process.env.ZOHO_CLIENT_ID;
 const ZOHORlinet_secret = process.env.ZOHO_CLIENT_SECRET;
-const ZOHORORKDRIVE_PARENT_ID = process.env.Sales_ZOHO_PARENT_ID;
+const ZOHORORKDRIVE_PARENT_ID = process.env.SALES_ZOHO_PARENT_ID;
 const TENANT_ID = process.env.TENANT_ID;
 const CLIENT_ID = process.env.MS_CLIENT_ID;
 const CLIENT_SECRET = process.env.MS_CLIENT_SECRET;
-const GRAPH_FOLDER_URLS = process.env.Sales_Share_POINT_URL;
+const GRAPH_FOLDER_URLS = process.env.SALES_SHARE_POINT_URL;
 
 
 // 1️⃣ Get Zoho Access Token
 console.log("===== ENV DEBUG =====");
 console.log("TENANT_ID:", process.env.TENANT_ID);
 console.log("MS_CLIENT_ID:", process.env.MS_CLIENT_ID);
-console.log("ZOHO_PARENT_ID:", process.env.Sales_ZOHO_PARENT_ID);
+console.log("ZOHO_PARENT_ID:", process.env.SALES_ZOHO_PARENT_ID);
 console.log("=====================");
 async function ZohoGetAccessToken() {
 //   const tokenUrl = "https://accounts.zoho.in/oauth/v2/token";
